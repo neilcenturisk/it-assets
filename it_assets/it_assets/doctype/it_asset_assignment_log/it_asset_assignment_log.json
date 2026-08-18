@@ -1,0 +1,33 @@
+{
+  "name": "IT Asset Assignment Log",
+  "module": "IT Assets",
+  "doctype": "DocType",
+  "document_type": "",
+  "engine": "InnoDB",
+  "istable": 1,
+  "fields": [
+    {
+      "fieldname": "assigned_to",
+      "fieldtype": "Data",
+      "label": "Person",
+      "in_list_view": 1,
+      "columns": 4
+    },
+    {
+      "fieldname": "action",
+      "fieldtype": "Select",
+      "label": "Action",
+      "options": "\nAssigned\nUnassigned",
+      "in_list_view": 1,
+      "columns": 3
+    },
+    {
+      "fieldname": "assigned_date",
+      "fieldtype": "Date",
+      "label": "Date",
+      "in_list_view": 1,
+      "columns": 3
+    }
+  ],
+  "permissions": []
+}

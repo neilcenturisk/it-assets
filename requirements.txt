@@ -1,0 +1,1 @@
+# IT Assets has no additional dependencies beyond Frappe

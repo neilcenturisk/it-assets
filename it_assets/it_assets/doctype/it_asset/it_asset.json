@@ -1,0 +1,167 @@
+{
+  "name": "IT Asset",
+  "module": "IT Assets",
+  "doctype": "DocType",
+  "document_type": "Document",
+  "engine": "InnoDB",
+  "naming_rule": "Expression",
+  "autoname": "CNTRSK-.#####",
+  "title_field": "device_name",
+  "search_fields": "device_name,serial_number,assigned_to_name",
+  "track_changes": 1,
+  "fields": [
+    {
+      "fieldname": "device_section",
+      "fieldtype": "Section Break",
+      "label": "Device Information"
+    },
+    {
+      "fieldname": "device_name",
+      "fieldtype": "Data",
+      "label": "Device Name",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1,
+      "description": "Hostname or friendly name (e.g., CNTRSK-100839)"
+    },
+    {
+      "fieldname": "device_type",
+      "fieldtype": "Select",
+      "label": "Device Type",
+      "options": "\nWindows Laptop\nWindows Desktop\nMacBook\niPad\niPhone\nMonitor\nPrinter\nDocking Station\nOther",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "device_column_break",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "model",
+      "fieldtype": "Data",
+      "label": "Model",
+      "description": "e.g., Dell Latitude 5540, MacBook Pro 14"
+    },
+    {
+      "fieldname": "serial_number",
+      "fieldtype": "Data",
+      "label": "Serial Number",
+      "unique": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "assignment_section",
+      "fieldtype": "Section Break",
+      "label": "Assignment"
+    },
+    {
+      "fieldname": "assigned_to_name",
+      "fieldtype": "Data",
+      "label": "Assigned To",
+      "in_list_view": 1,
+      "in_standard_filter": 1,
+      "description": "Name of the person using this device"
+    },
+    {
+      "fieldname": "assigned_to_email",
+      "fieldtype": "Data",
+      "label": "User Email",
+      "options": "Email",
+      "description": "Their Centurisk email (links to helpdesk contact)"
+    },
+    {
+      "fieldname": "assignment_column_break",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "department",
+      "fieldtype": "Data",
+      "label": "Department"
+    },
+    {
+      "fieldname": "location",
+      "fieldtype": "Data",
+      "label": "Location",
+      "description": "Office or remote"
+    },
+    {
+      "fieldname": "status_section",
+      "fieldtype": "Section Break",
+      "label": "Status & Lifecycle"
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "\nActive\nAvailable\nIn Repair\nRetired",
+      "default": "Active",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "status_column_break",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "purchase_date",
+      "fieldtype": "Date",
+      "label": "Purchase Date"
+    },
+    {
+      "fieldname": "warranty_expiration",
+      "fieldtype": "Date",
+      "label": "Warranty Expiration"
+    },
+    {
+      "fieldname": "notes_section",
+      "fieldtype": "Section Break",
+      "label": "Notes",
+      "collapsible": 1
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes"
+    },
+    {
+      "fieldname": "assignment_history_section",
+      "fieldtype": "Section Break",
+      "label": "Assignment History",
+      "collapsible": 1
+    },
+    {
+      "fieldname": "assignment_history",
+      "fieldtype": "Table",
+      "label": "Assignment History",
+      "options": "IT Asset Assignment Log"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "print": 1,
+      "export": 1,
+      "import": 1
+    },
+    {
+      "role": "Agent",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 0,
+      "email": 1,
+      "print": 1,
+      "export": 1,
+      "import": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC"
+}
